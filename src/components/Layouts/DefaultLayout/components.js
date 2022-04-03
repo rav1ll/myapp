@@ -4,26 +4,22 @@ export const Header = styled.header`
 	position: sticky;
 	display: flex;
 	justify-content: space-between;
-	padding: 1.5em;
-
-	background-color: #003399;
+	padding: 1em;
+	background-color: #bc8f8a;
+	border-radius: 22px;
+	margin-top: 0.1em;
 `;
 
 export const HeaderTitle = styled.h1`
 	font-size: 1.5em;
-	color: #fff;
-`;
-
-export const AppName = styled.div`
-	font-size: 1.5em;
-	color: #fff;
+	color: #fff5ee;
 `;
 
 export const Content = styled.div`
-	background-color: #6699cc;
-	height: 100vh;
+	background-color: #fff5ee;
 `;
 
 export const MainBlock = styled.main`
-	background-color: #6699cc;
+	background-color: #fff5ee;
+	font-size: 1em;
 `;

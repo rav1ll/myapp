@@ -3,15 +3,16 @@ import styled, { css } from 'styled-components';
 
 const StyledButton = styled.button(
 	({ disabled }) => css`
-		border: 3px solid #bb7db2;
-		border-radius: 6px;
-		font-size: 1em;
-
-		color: #484f4f;
-		background-color: white;
+		border: 3px solid #ffefd5;
+		border-radius: 22px;
+		font-size: 1.1em;
+		margin: 10px;
+		display: flex;
+		color: #2f4f4f;
+		background-color: #ffefd5;
 		cursor: ${disabled ? 'not-allowed' : 'pointer'};
 		opacity: ${disabled ? 0.5 : 1};
-		transition-duration: 0.5s;
+		box-shadow: 0 0 5px #708090;
 	`
 );
 

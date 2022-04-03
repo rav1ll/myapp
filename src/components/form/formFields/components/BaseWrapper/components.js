@@ -7,5 +7,5 @@ export const LabelWrapper = styled.div`
 
 export const StyledLabel = styled.label`
 	display: block;
-	width: 100%;
+	width: 23rem;
 `;

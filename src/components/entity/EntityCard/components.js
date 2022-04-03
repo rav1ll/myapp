@@ -1,51 +1,32 @@
 import styled from 'styled-components';
 
-const defaultBorderRadius = '8px';
-
 export const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	border: 1px solid black;
-	border-radius: ${defaultBorderRadius};
+	border: #bc8f8f;
+	border-radius: 22px;
 `;
 
 export const Header = styled.div`
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
-	background-color: #6699ff;
-	padding: 0.5rem;
-	border-top-left-radius: ${defaultBorderRadius};
-	border-top-right-radius: ${defaultBorderRadius};
-	border-bottom: 1px solid black;
+	background-color: #bc8f8f;
+	padding: 0.1rem;
 `;
 
-export const Title = styled.div``;
-
-export const ButtonWrapper = styled.div`
-	display: flex;
-	justify-content: space-between;
-	> :nth-child(n):not(:last-child) {
-		margin-right: 0.5em;
-	}
-`;
+export const ButtonWrapper = styled.div``;
 
 export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
 	padding: 1rem;
-	background-color: #d7cbd4;
-	border-bottom-left-radius: ${defaultBorderRadius};
-	border-bottom-right-radius: ${defaultBorderRadius};
-	> * {
-		margin-bottom: 0.5rem;
-	}
-`;
+	background-color: #ffdab9;
+	align-content: center;
 
-export const StyledImage = styled.img`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 20px;
-	height: 20px;
+	> * {
+		margin-bottom: 1rem;
+		width: 18rem;
+		align-content: center;
+	}
 `;

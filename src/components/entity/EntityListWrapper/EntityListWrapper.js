@@ -2,18 +2,22 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const Wrapper = styled.div(
-  () => css`
+	() => css`
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
-		margin-left: 3rem;
+
+		justify-content: start;
+		margin-left: 30px;
+
 		> :nth-child(n) {
-			margin-bottom: 1rem;
-			margin-right: 3rem;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			margin-right: 10px;
+			width: 20rem;
 		}
 	`
 );
 
 export default function EntityListWrapper({ children }) {
-  return <Wrapper>{children}</Wrapper>;
+	return <Wrapper>{children}</Wrapper>;
 }

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import useAuthUser from 'globals/AuthUser';
 import useCreateProject from 'hooks/mutations/useCreateProject';
 import useRemoveProject from 'hooks/mutations/useRemoveProject';
-//import useUpdateProject from 'hooks/mutations/useUpdateProject';
+import useUpdateProject from 'hooks/mutations/useUpdateProject';
 
 import DefaultLayout from 'components/Layouts/DefaultLayout/DefaultLayout';
 import EntityListWrapper from 'components/entity/EntityListWrapper/EntityListWrapper';
@@ -14,7 +14,7 @@ import { useApolloClient } from '@apollo/client';
 
 const INITIAL_FORM_STATE = {
 	name: 'New task',
-	description: 'enter your text'
+	description: 'Project description'
 };
 
 export default function Index() {
@@ -30,7 +30,7 @@ export default function Index() {
 
 	const { create } = useCreateProject();
 	const { remove } = useRemoveProject();
-	//const { update } = useUpdateProject();
+	const { update } = useUpdateProject();
 
 	const handleClick = async (event) => {
 		event.preventDefault();
@@ -45,19 +45,19 @@ export default function Index() {
 	}, [user, isLoading]);
 
 	return (
-		<DefaultLayout title="Main Page">
-			<Button onClick={handleLogoutClick}>Logout</Button>
+		<DefaultLayout title="Task Tracker">
+			<Button onClick={handleLogoutClick}>Log out</Button>
 			<Button onClick={handleClick}>Create project</Button>
 			<EntityListWrapper>
 				{user?.projects?.map((project) => (
 					<EntityCard
 						key={project.id}
 						id={project.id}
-						title="Project"
+						title="Project Info"
 						name={project.name}
 						description={project.description}
 						onRemoveClick={remove}
-						//onEditClick={update}
+						onUpdateClick={update}
 					/>
 				))}
 			</EntityListWrapper>

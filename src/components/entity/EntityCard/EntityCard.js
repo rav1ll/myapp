@@ -11,8 +11,8 @@ export default function EntityCard({ title, name, id, description, onRemoveClick
 			<Header>
 				{title}
 				<ButtonWrapper>
-					<Button className="btn edit" onClick={() => onUpdateClick(id)}>
-						Edit
+					<Button className="btn update" onClick={() => onUpdateClick(id)}>
+						Update
 					</Button>
 					<Button className="btn remove" onClick={() => onRemoveClick(id)}>
 						Remove
@@ -20,8 +20,8 @@ export default function EntityCard({ title, name, id, description, onRemoveClick
 				</ButtonWrapper>
 			</Header>
 			<Form>
-				<TextField label="Name" value={name} disabled />
-				<TextField label="Description" value={description} disabled />
+				<TextField label="Project name" value={name} disabled />
+				<TextField label="Project description" value={description} disabled />
 			</Form>
 		</Wrapper>
 	);
