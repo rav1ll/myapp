@@ -13,8 +13,8 @@ import Button from 'components/form/inputs/Button';
 import { useApolloClient } from '@apollo/client';
 
 const INITIAL_FORM_STATE = {
-	name: 'New task 5',
-	description: 'desc'
+	name: 'New task',
+	description: 'enter your text'
 };
 
 export default function Index() {
@@ -27,7 +27,6 @@ export default function Index() {
 		await client.clearStore();
 		navigate('/login');
 	};
-	// const [formState, setFormState] = useState(INITIAL_FORM_STATE);
 
 	const { create } = useCreateProject();
 	const { remove } = useRemoveProject();

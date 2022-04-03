@@ -7,12 +7,12 @@ const useUpdateProject = () => {
 		refetchQueries: [{ query: getCurrentUser }]
 	});
 
-	const edit = async (name, description) => {
+	const update = async (name, description) => {
 		await mutation({ variables: { name, description } });
 	};
 
 	return {
-		edit,
+		update,
 		data
 	};
 };
