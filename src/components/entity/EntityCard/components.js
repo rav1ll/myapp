@@ -15,14 +15,12 @@ export const Header = styled.div`
 	padding: 0.1rem;
 `;
 
-export const ButtonWrapper = styled.div``;
-
 export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
 	padding: 1rem;
 	background-color: #ffdab9;
-	align-content: center;
+	align-content: start;
 
 	> * {
 		margin-bottom: 1rem;

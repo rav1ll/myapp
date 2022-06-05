@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloProvider } from '@apollo/client';
-
 import GlobalStyles from 'globals/styles';
 import ApolloClient from 'api/ApolloClient';
 

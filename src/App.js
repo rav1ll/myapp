@@ -4,9 +4,9 @@ import EnvSpecificRouter from 'components/EnvSpecificRouter';
 
 import { AuthUser } from 'globals/AuthUser';
 
-import LoginPage from 'pages/Login';
-import HomePage from 'pages/Index';
-import RegistrationPage from 'pages/Registration';
+import RegistrationPage from 'pages/reg';
+import LoginPage from 'pages/login';
+import HomePage from 'pages/main';
 
 function App() {
 	return (

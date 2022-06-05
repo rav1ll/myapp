@@ -17,7 +17,7 @@ const INITIAL_FORM_STATE = {
 	description: 'Project description'
 };
 
-export default function Index() {
+export default function Main() {
 	const { user, isLoading } = useAuthUser();
 
 	const client = useApolloClient();
@@ -53,7 +53,6 @@ export default function Index() {
 					<EntityCard
 						key={project.id}
 						id={project.id}
-						title="Project Info"
 						name={project.name}
 						description={project.description}
 						onRemoveClick={remove}

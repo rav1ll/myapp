@@ -5,14 +5,10 @@ const Wrapper = styled.div(
 	() => css`
 		display: flex;
 		flex-wrap: wrap;
-
-		justify-content: start;
 		margin-left: 30px;
 
 		> :nth-child(n) {
-			margin-top: 10px;
-			margin-bottom: 10px;
-			margin-right: 10px;
+			margin: 0.35rem;
 			width: 20rem;
 		}
 	`
