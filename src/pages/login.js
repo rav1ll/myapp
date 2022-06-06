@@ -64,6 +64,14 @@ export default function Login() {
 		}
 	}, [isLoading, user]);
 
+	const handleRegistration = async (event) => {
+		event.preventDefault();
+		if (!isHasClientErrors) {
+			setIsSignInLoading(false);
+			navigate('/registration', { replace: true });
+		}
+	};
+
 	return (
 		<OneFormLayout>
 			{signInError && <FormError>{signInError.message}</FormError>}
@@ -79,6 +87,8 @@ export default function Login() {
 			<Button type="submit" disabled={isHasClientErrors || isSignInLoading || !isRequiredFieldFilled || isLoading} onClick={handleSignIn}>
 				Log in
 			</Button>
+
+			<Button onClick={handleRegistration}>Register</Button>
 		</OneFormLayout>
 	);
 }

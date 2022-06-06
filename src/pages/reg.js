@@ -60,6 +60,11 @@ export default function Registration() {
 		}
 	};
 
+	const handleLogin = async (event) => {
+		event.preventDefault();
+		navigate('/login', { replace: true });
+	};
+
 	return (
 		<OneFormLayout>
 			<TextField
@@ -97,6 +102,8 @@ export default function Registration() {
 			<Button type="submit" disabled={isHasError || !isRequiredFieldFilled || isLoading} onClick={handleRegister}>
 				Register
 			</Button>
+
+			<Button onClick={handleLogin}>Log In</Button>
 		</OneFormLayout>
 	);
 }
