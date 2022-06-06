@@ -6,10 +6,10 @@ import useAuthUser from 'globals/AuthUser';
 import signIn from 'api/mutations/signIn';
 
 import OneFormLayout from 'components/Layouts/OneFormLayout';
-import Button from 'components/form/inputs/Button';
+import Button from 'components/form/inputs/button';
 import PasswordField from 'components/form/formFields/PasswordField';
 import TextField from 'components/form/formFields/TextField';
-import useHandleChangeField from 'components/form/utils/useHandleChangeField';
+import useHandleChangeField from 'components/form/inputs/useHandleChangeField';
 
 import emailValidator from 'validators/stringValidators/emailValidator';
 import useSharedValidation from 'validators/useSharedValidation';
@@ -73,7 +73,7 @@ export default function Login() {
 	};
 
 	return (
-		<OneFormLayout>
+		<OneFormLayout title="Log in">
 			{signInError && <FormError>{signInError.message}</FormError>}
 			<TextField id="login" label="email" value={formState.login} error={errorsState.login} onChange={handleEvents} onBlur={handleEvents} />
 			<PasswordField

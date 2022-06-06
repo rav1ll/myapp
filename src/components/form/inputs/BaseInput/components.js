@@ -5,7 +5,7 @@ export const StyledInput = styled.input`
 	background: unset;
 	outline: unset;
 	width: 100%;
-	font-size: 1em;
+	font-size: 1.7rem;
 `;
 
 export const Container = styled.div(({ $isError, $disabled }) => {
@@ -13,18 +13,16 @@ export const Container = styled.div(({ $isError, $disabled }) => {
 		display: inline-flex;
 		flex-direction: row;
 		align-items: center;
-
-		width: 100%;
 		min-height: 45px;
-		background-color: #ffefd5;
+		background-color: #f5f5f5;
 
-		padding: 0.2em;
-		border: 3px solid ${$isError ? '#800000' : '#2f4f4f'};
+		padding: 0.2rem;
+		border: 3px solid ${$isError ? '#800000' : '#F4A460'};
 		border-radius: 6px;
 
 		${$disabled &&
 		css`
-			border-color: #ffefd5;
+			border-color: #4169e1;
 		`}
 	`;
 });

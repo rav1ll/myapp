@@ -15,10 +15,10 @@ import maxLengthValidatorBuilder from 'validators/stringValidators/maxLengthVali
 import useRequiredFieldsFilled from 'validators/useRequiredFieldsFilled';
 
 import OneFormLayout from 'components/Layouts/OneFormLayout';
-import useHandleChangeField from 'components/form/utils/useHandleChangeField';
+import useHandleChangeField from 'components/form/inputs/useHandleChangeField';
 import TextField from 'components/form/formFields/TextField';
 import PasswordField from 'components/form/formFields/PasswordField';
-import Button from 'components/form/inputs/Button';
+import Button from 'components/form/inputs/button';
 
 const INITIAL_FORM_STATE = {
 	email: '',
@@ -66,31 +66,10 @@ export default function Registration() {
 	};
 
 	return (
-		<OneFormLayout>
-			<TextField
-				label={'email'}
-				id={'email'}
-				onChange={handleEvents}
-				onBlur={handleEvents}
-				value={formState.email}
-				error={errorsState.email}
-			/>
-			<TextField
-				label={'First name'}
-				id={'firstName'}
-				onChange={handleEvents}
-				onBlur={handleEvents}
-				value={formState.firstName}
-				error={errorsState.firstName}
-			/>
-			<TextField
-				label={'Last name'}
-				id={'lastName'}
-				onChange={handleEvents}
-				onBlur={handleEvents}
-				value={formState.lastName}
-				error={errorsState.lastName}
-			/>
+		<OneFormLayout title="Registration">
+			<TextField label={'email'} id={'email'} onChange={handleEvents} value={formState.email} error={errorsState.email} />
+			<TextField label={'First name'} id={'firstName'} onChange={handleEvents} value={formState.firstName} error={errorsState.firstName} />
+			<TextField label={'Last name'} id={'lastName'} onChange={handleEvents} value={formState.lastName} error={errorsState.lastName} />
 			<PasswordField
 				label={'Password'}
 				id={'password'}

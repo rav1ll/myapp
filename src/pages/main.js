@@ -4,18 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import useAuthUser from 'globals/AuthUser';
 import useCreateProject from 'hooks/mutations/useCreateProject';
 import useRemoveProject from 'hooks/mutations/useRemoveProject';
+
 import useUpdateProject from 'hooks/mutations/useUpdateProject';
 
+import CreateEntity from 'components/entity/CreateEntity/CreateEntity';
+
+import { useApolloClient } from '@apollo/client';
 import DefaultLayout from 'components/Layouts/DefaultLayout/DefaultLayout';
 import EntityListWrapper from 'components/entity/EntityListWrapper/EntityListWrapper';
-import EntityCard from 'components/entity/EntityCard';
-import Button from 'components/form/inputs/Button';
-import { useApolloClient } from '@apollo/client';
-
-const INITIAL_FORM_STATE = {
-	name: 'New task',
-	description: 'Project description'
-};
+import EntityCard from 'components/entity/EntityCard/EntityCard';
 
 export default function Main() {
 	const { user, isLoading } = useAuthUser();
@@ -32,12 +29,6 @@ export default function Main() {
 	const { remove } = useRemoveProject();
 	const { update } = useUpdateProject();
 
-	const handleClick = async (event) => {
-		event.preventDefault();
-
-		await create(INITIAL_FORM_STATE.name, INITIAL_FORM_STATE.description);
-	};
-
 	useEffect(() => {
 		if (isLoading === false && !user) {
 			navigate('/login');
@@ -46,15 +37,16 @@ export default function Main() {
 
 	return (
 		<DefaultLayout title="Task Tracker">
-			<Button onClick={handleLogoutClick}>Log out</Button>
-			<Button onClick={handleClick}>Create project</Button>
+			<CreateEntity entity="project" handleLogoutClick={handleLogoutClick} createRequest={create} />
+
 			<EntityListWrapper>
-				{user?.projects?.map((project) => (
+				{user?.projects?.map(({ id, name, description }) => (
 					<EntityCard
-						key={project.id}
-						id={project.id}
-						name={project.name}
-						description={project.description}
+						key={id}
+						id={id}
+						title="Project"
+						name={name}
+						description={description}
 						onRemoveClick={remove}
 						onUpdateClick={update}
 					/>

@@ -3,9 +3,9 @@ import React from 'react';
 import DefaultLayout from '../DefaultLayout/DefaultLayout';
 import { Form, PageWrapper } from './components';
 
-export default function OneFormLayout({ children }) {
+export default function OneFormLayout({ title, children }) {
 	return (
-		<DefaultLayout>
+		<DefaultLayout title={title}>
 			<PageWrapper>
 				<Form>{children}</Form>
 			</PageWrapper>

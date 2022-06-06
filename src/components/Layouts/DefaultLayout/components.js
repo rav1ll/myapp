@@ -4,22 +4,24 @@ export const Header = styled.header`
 	position: sticky;
 	display: flex;
 	justify-content: space-between;
-	padding: 1em;
-	background-color: #bc8f8a;
+	padding: 1rem;
+	background-color: royalblue;
 	border-radius: 22px;
 	margin-top: 0.1em;
 `;
 
 export const HeaderTitle = styled.h1`
-	font-size: 1.5em;
-	color: #fff5ee;
+	font-size: 2.5rem;
+	color: white;
 `;
 
 export const Content = styled.div`
-	background-color: #fff5ee;
+	background-color: white;
 `;
 
 export const MainBlock = styled.main`
-	background-color: #fff5ee;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
 	font-size: 1em;
 `;
